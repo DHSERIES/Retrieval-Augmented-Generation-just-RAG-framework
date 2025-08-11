@@ -7,18 +7,18 @@ This guide outlines the typical steps to build a RAG pipeline using LangChain.
 ##  1.Load Documents
 
 Import your documents into LangChain using a suitable **Document Loader**.
-# using loader from https://python.langchain.com/docs/integrations/document_loaders/ for more detail
+using loader from https://python.langchain.com/docs/integrations/document_loaders/ for more detail
 
 ##  2. Split Document
 
 Using `RecursiveCharacterTextSplitter` in LangChain approach helps preserve context and readability in chunked data.
 
-# 🔧 Best Practices
+🔧 Best Practices
 - **Chunk Size**: 500–2000 characters (or 200–500 tokens)
 - **Chunk Overlap**: 10–20% of chunk size
 - **Custom Separators**: If your data has a clear structural pattern
 
-# ⚠️ When to Consider Alternatives
+⚠️ When to Consider Alternatives
 | Scenario | Recommended Splitter |
 |----------|----------------------|
 | Code files | Language-specific splitters (e.g., `PythonCodeSplitter`) |
@@ -30,7 +30,7 @@ Using `RecursiveCharacterTextSplitter` in LangChain approach helps preserve cont
 
 Converts text chunks into **vector representations** (lists of numbers) that capture their meaning and stored in a **Vector Store** for similarity search.
 
-# Ways to Generate Embeddings
+Ways to Generate Embeddings
 - **Using Pre-trained Embedding Models**
 - OpenAI: `text-embedding-ada-002` (cheap & effective for most cases)
 - ...
@@ -47,22 +47,22 @@ vector_store = ...
 
 Once your documents are embedded and stored in a vector DB, you can retrieve relevant chunks using different strategies.
 
-# Similarity Search
+Similarity Search
 - **vectorstore.as_retriever**
 - for more info ""https://python.langchain.com/docs/how_to/vectorstore_retriever/"" 
-# Max Marginal Relevance (MMR)
-# Similarity Search with Metadata Filtering**
-# Hybrid Search (Vector + Keyword)
-# ... still update
+Max Marginal Relevance (MMR)
+Similarity Search with Metadata Filtering**
+Hybrid Search (Vector + Keyword)
+... still update
 
 ## 6. load LLM model
 
-# read LoadLLM.md for more detail
+read LoadLLM.md for more detail
 
 ## 7.Set up question-answer chain
 
-# using RetrievalQA.from_chain_type()
-# custom build using template
+using RetrievalQA.from_chain_type()
+custom build using template
 - example
     <!-- template = """Use the following documents to answer the question.If you don't know, say "I don't know" — do not make things up.
 .
@@ -90,7 +90,7 @@ or
 
     
 ### index
-# retriver chema : List[Document]
+retriver chema : List[Document]
 <!-- from langchain.schema import Document
 from langchain.schema import BaseRetriever
 

@@ -27,7 +27,7 @@ model = AutoModelForCausalLM.from_pretrained(
     torch_dtype="auto"
 )
 
-# Create a text generation pipeline
+- Create a text generation pipeline
 pipe = pipeline(
     "text-generation",
     model=model,
